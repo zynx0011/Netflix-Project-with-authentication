@@ -210,6 +210,7 @@ import {
   deleteUserFailure,
   signOut,
 } from "../store/authSlice.js";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { currentUser } = useSelector((state) => state.auth);
@@ -266,22 +267,7 @@ const Profile = () => {
   //     setImage(e.target.files[0]);
   //   }
   // };
-  const handleChangePassword = async () => {
-    const oldPassword = prompt("Enter old password");
-    const newPassword = prompt("Enter new password");
-    try {
-      const res = await axios.post("/api/v1/users/change-password", {
-        oldPassword,
-        newPassword,
-      });
-      setError(false);
-      setUpdateSuccess(true);
-      console.log("Password changed successfully", res);
-    } catch (error) {
-      console.log(error);
-      setError(true);
-    }
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -429,19 +415,18 @@ const Profile = () => {
         <div className="flex justify-between items-center  sm:gap-0 sm:w-1/2 my-4 ">
           <button
             onClick={handleDelete}
-            className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border border-red-700"
+            className="text-red-700 cursor-pointer p-3 underline  hover:text-red-600"
           >
             Delete Accout
           </button>
-          <button
-            onClick={handleChangePassword}
-            className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border  border-red-700"
-          >
-            Change Password ?
-          </button>
+          <Link to="/change-password">
+            <span className="text-white-700 cursor-pointer p-3 font-semibold  underline ">
+              Change Password ?
+            </span>
+          </Link>
           <button
             onClick={handleSignOut}
-            className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border border-red-700"
+            className="text-red-700 cursor-pointer p-3 font-semibold underline hover:text-red-600"
           >
             Sign Out
           </button>

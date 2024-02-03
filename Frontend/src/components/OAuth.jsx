@@ -31,10 +31,10 @@ const OAuth = () => {
   };
 
   return (
-    <div>
+    <div className="bg-red-700 rounded-lg">
       <button
         type="button"
-        className="bg-red-600 text-white p-2 rounded-lg w-full hover:bg-red-700"
+        className=" text-white p-2 rounded-lg w-full hover:bg-red-800"
         onClick={submitHandlerWithGoogle}
       >
         Sign in with Google{" "}
