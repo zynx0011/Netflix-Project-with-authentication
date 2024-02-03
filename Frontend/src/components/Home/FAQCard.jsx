@@ -11,7 +11,7 @@ const FAQCard = (props) => {
     <div className="cards mt-[1%]">
       <div className="bg-[#2d2d2d] w-[66vw] m-auto">
         <h1
-          className="text-left font-bold text-2xl p-[1.4rem]"
+          className="text-left font-bold text-2xl p-4 sm:p-[1.4rem]"
           onClick={toggleAnswerVisibility}
         >
           {props.title}

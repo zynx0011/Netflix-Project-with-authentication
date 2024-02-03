@@ -188,53 +188,55 @@ export default function SignUp() {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto border border-3 rounded ">
-      <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
-      <p className="text-red-700 mt-5  text-center mb-5">
-        {error && "Something went wrong!"}
-      </p>
+    <div className="p-[7%]">
+      <div className="p-3 max-w-lg mx-auto border border-3 rounded ">
+        <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
+        <p className="text-red-700 mt-5  text-center mb-5">
+          {error && "Something went wrong!"}
+        </p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="Username"
-          id="username"
-          name="username"
-          className="bg-black-100 p-3 rounded-lg"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          id="email"
-          name="email"
-          className="bg-black-100 p-3 rounded-lg"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          name="password"
-          className="bg-black-100 p-3 rounded-lg"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <button
-          disabled={loading}
-          className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
-        >
-          {loading ? "Loading..." : "Sign Up"}
-        </button>
-        <OAuth />
-      </form>
-      <div className="flex gap-2 mt-5 justify-center items-center">
-        <p>Have an account?</p>
-        <Link to="/api/v1/users/SignIn">
-          <span className="text-blue-500">Sign in</span>
-        </Link>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 ">
+          <input
+            type="text"
+            placeholder="Username"
+            id="username"
+            name="username"
+            className="bg-black-100 p-3 rounded-lg"
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            name="email"
+            className="bg-black-100 p-3 rounded-lg"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            className="bg-black-100 p-3 rounded-lg"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <button
+            disabled={loading}
+            className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+          >
+            {loading ? "Loading..." : "Sign Up"}
+          </button>
+          <OAuth />
+        </form>
+        <div className="flex gap-2 mt-5 justify-center items-center">
+          <p>Have an account?</p>
+          <Link to="/api/v1/users/SignIn">
+            <span className="text-blue-500">Sign in</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

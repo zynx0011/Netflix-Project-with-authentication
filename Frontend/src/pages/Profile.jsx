@@ -422,16 +422,22 @@ const Profile = () => {
             name="password"
             className="bg-gray-400 text-black placeholder:text-black font-semibold rounded-lg p-3 my-4"
           /> */}
-          <button className="bg-gray-700 text-white p-3 rounded-lg uppercase hover:opacity-95 border font-bold my-2">
+          <button className="bg-blue-700 text-white p-3 rounded-lg uppercase hover:opacity-95 border font-bold my-2">
             Update
           </button>
         </div>
-        <div className="flex justify-between items-center w-1/2 my-4">
+        <div className="flex justify-between items-center  sm:gap-0 sm:w-1/2 my-4 ">
           <button
             onClick={handleDelete}
             className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border border-red-700"
           >
             Delete Accout
+          </button>
+          <button
+            onClick={handleChangePassword}
+            className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border  border-red-700"
+          >
+            Change Password ?
           </button>
           <button
             onClick={handleSignOut}
@@ -441,12 +447,6 @@ const Profile = () => {
           </button>
         </div>
       </form>
-      <button
-        onClick={handleChangePassword}
-        className="text-red-700 cursor-pointer p-3 bg-black font-semibold rounded-lg border border-red-700"
-      >
-        Change Password ?
-      </button>
     </div>
   );
 };
